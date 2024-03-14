@@ -1,0 +1,28 @@
+.coffee-card {
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+  }
+  
+  .coffee-card.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .coffee-card Card {
+    transform-style: preserve-3d;
+  }
+  
+  .coffee-card Card:first-child {
+    z-index: 2;
+  }
+  
+  .coffee-card Card:last-child {
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
