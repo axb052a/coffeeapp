@@ -59,6 +59,12 @@ function NavBar({ user, setUser }) {
             <Button color="inherit" component={NavLink} to="/coffee-types">
               Coffee Types
             </Button>
+            <Button color="inherit" component={NavLink} to="/coffee-quiz">
+              Coffee Quiz
+            </Button>
+            <Button color="inherit" component={NavLink} to="/about">
+              About
+            </Button>
             <Button color="inherit" onClick={handleLogout}>
               Logout
             </Button>

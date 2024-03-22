@@ -9,6 +9,8 @@ import CoffeeShops from './CoffeeShops';
 import NavBar from './NavBar';
 import UserProfile from './UserProfile';
 import CoffeeTypes from './CoffeeTypes';
+import About from './About';
+import CoffeeQuiz from './CoffeeQuiz'
 
 function App() {
   const [user, setUser] = useState();
@@ -56,6 +58,8 @@ function App() {
         <Route path="/coffee-shops" element={<CoffeeShops />} />
         <Route path="/profile" element={<UserProfile user={user} />} />
         <Route path="/coffee-types" element={<CoffeeTypes />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/coffee-quiz" element={<CoffeeQuiz />} />
       </Routes>
     </Router>
   );
