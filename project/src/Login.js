@@ -73,7 +73,7 @@ const Login = ({ setUser }) => {
       }}
     >
       <Typography variant="h4" gutterBottom style={{ color: 'black' }}>
-        Welcome to Cafe Explorer!
+        Welcome to Cafe Hopper!
       </Typography>
       <Typography variant="body1" paragraph style={{ color: 'black' }}>
         Log in to start your cafe-hopping experience.

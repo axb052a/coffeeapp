@@ -10,7 +10,8 @@ import NavBar from './NavBar';
 import UserProfile from './UserProfile';
 import CoffeeTypes from './CoffeeTypes';
 import About from './About';
-import CoffeeQuiz from './CoffeeQuiz'
+import CoffeeQuiz from './CoffeeQuiz';
+import Biography from './Biography'
 
 function App() {
   const [user, setUser] = useState();
@@ -60,6 +61,7 @@ function App() {
         <Route path="/coffee-types" element={<CoffeeTypes />} />
         <Route path="/about" element={<About />} />
         <Route path="/coffee-quiz" element={<CoffeeQuiz />} />
+        <Route path="/biography" element={<Biography />} />
       </Routes>
     </Router>
   );

@@ -3,7 +3,7 @@ import { Paper, Typography, Divider, Grid, Button, FormControl, RadioGroup, Radi
 import './CoffeeQuiz.css';
 
 function CoffeeQuiz() {
-  // Define an array of coffee types for the quiz
+  
   const coffeeTypes = [
     {
       name: 'Espresso',
@@ -74,7 +74,6 @@ function CoffeeQuiz() {
   // Determine if all questions are answered correctly
   const allCorrect = userChoices.every((choice, index) => choice === coffeeTypes[index].choices.indexOf(coffeeTypes[index].correctChoice));
 
-  // Render the quiz question
   return (
     <Paper
       elevation={3}

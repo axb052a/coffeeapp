@@ -65,12 +65,12 @@ function Home({ user }) {
         <div>
           {user ? (
             <Typography variant="h5" gutterBottom>
-              Welcome, {user.username} to Cafe Explorer!
+              Welcome, {user.username} to Cafe Hopper!
             </Typography>
           ) : (
             <div>
               <Typography variant="h4" gutterBottom>
-                Welcome to Cafe Explorer!
+                Welcome to Cafe Hopper!
               </Typography>
             </div>
           )}
@@ -78,20 +78,23 @@ function Home({ user }) {
         {user ? (
           <>
             <Typography variant="body18" paragraph>
-              Cafe Explorer is your guide to discovering charming cafes in the Los Angeles area. Explore the coffee scene and find hidden gems to enjoy your favorite brews. Use the search functionality to locate cafes based on your preferences.
+              Cafe Hopper is your guide to discovering charming cafes in the Los Angeles, San Diego, Orange County and San Francisco area. Explore the coffee scene and find hidden gems to enjoy your favorite brews. Use the search functionality to locate cafes based on your preferences.
               Visit {' '}
               <NavLink to="/coffee-shops" style={{ textDecoration: 'none', color: coffeeBrownColor, fontWeight: 'bold', fontSize: '1.0em' }}>
                 Coffee Shops
-              </NavLink> to determine which cafes stand out to you. View their menu and reviews! If you are new to the coffee world, visit {' '}
+              </NavLink> to determine which cafes stand out to you. Leave your reveiw if you have visited them. View their menu and reviews! If you are new to the coffee world, visit {' '}
               <NavLink to="/coffee-types" style={{ textDecoration: 'none', color: coffeeBrownColor, fontWeight: 'bold', fontSize: '1.0em' }}>
                 Coffee Types
-                </NavLink> to see the different types of coffee. 
+                </NavLink> to see the different types of coffee. Take the quiz to test your coffee knowledge at {' '}
+                <NavLink to="/coffee-quiz" style={{ textDecoration: 'none', color: coffeeBrownColor, fontWeight: 'bold', fontSize: '1.0em' }}>
+                Coffee Quiz
+                </NavLink> .  
             </Typography>
             <SearchBar onSearch={handleSearch} />
           </>
         ) : (
             <Typography variant="body18" paragraph>
-              Welcome to Cafe Explorer! This app is your go-to resource for discovering cafes in the Los Angeles area. Whether you're a coffee enthusiast or just looking for a cozy spot to relax, Cafe Explorer has you covered. To get started, please{' '}
+              Welcome to Cafe Hopper! This app is your go-to resource for discovering cafes in the Los Angeles, San Diego, Orange County and San Francisco area. Whether you're a coffee enthusiast or just looking for a cozy spot to relax, Cafe Explorer has you covered. To get started, please{' '}
               <NavLink to="/login" style={{ textDecoration: 'none', color: coffeeBrownColor, fontWeight: 'bold', fontSize: '1.0em' }}>
                 Log In
               </NavLink>{' '}
@@ -101,7 +104,15 @@ function Home({ user }) {
               </NavLink>
               . Explore the vibrant coffee culture of Los Angeles and find your new favorite cafe. Start your cafe-hopping adventure with Cafe Explorer today! 
               <br />
-              Discover charming cafes, explore the coffee scene, and find hidden gems to enjoy your favorite brews. Use the search functionality to locate cafes based on your preferences. 
+              Discover charming cafes, explore the coffee scene, and find hidden gems to enjoy your favorite brews. Use the search functionality to locate cafes based on your preferences. Visit
+              {' '}<NavLink to="/about" style={{ textDecoration: 'none', color: coffeeBrownColor, fontWeight: 'bold', fontSize: '1.0em' }}>
+                About
+              </NavLink>{' '}
+              to learn more about the app and its functionality. Read my 
+              {' '}<NavLink to="/biography" style={{ textDecoration: 'none', color: coffeeBrownColor, fontWeight: 'bold', fontSize: '1.0em' }}>
+                Biography
+              </NavLink>{' '}
+              to learn and get to know me on a personal level as a software engineer. 
             </Typography>        
             )}
       </Paper>
@@ -120,7 +131,6 @@ function Home({ user }) {
                         location={coffee.location}
                         logo={coffee.logo}
                         menus={coffee.menus}
-                        // Pass reviews as a prop to CoffeeShopsCard
                         reviews={coffee.reviews}
                       />
                     </Grid>

@@ -13,7 +13,7 @@ function SearchBar({ onSearch }) {
   return (
     <div style={{ marginBottom: '1rem' }}>
       <TextField
-        label="Search cafes"
+        label="Search cafes in Los Angeles, San Diego, Orange County or San Francisco area"
         variant="outlined"
         value={searchTerm}
         onChange={handleChange}

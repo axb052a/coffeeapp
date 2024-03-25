@@ -13,7 +13,7 @@ const UserProfile = ({ user }) => {
             left: 0,
             width: '100%',
             height: 'calc(100% - 64px)',
-            backgroundImage: 'url("https://static.vecteezy.com/system/resources/previews/025/939/952/large_2x/minimal-interior-design-coffee-cafe-bar-shop-with-beige-cozy-tone-style-and-with-glossy-ivory-white-round-corner-counter-coffee-machinery-with-generative-ai-free-photo.jpeg")', // Corrected background image URL
+            backgroundImage: 'url("https://images.adsttc.com/media/images/5b27/a202/f197/cc39/7700/009a/large_jpg/-_Featured_Image.jpg?1529324006")', 
             backgroundSize: 'cover',
             overflow: 'auto',
             padding: '20px',

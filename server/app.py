@@ -129,39 +129,7 @@ class CoffeeShopsResource(Resource):
         db.session.commit()
 
         return make_response({'message': 'Coffee shop added successfully!'}, 201)
-
-    def put(self, coffee_shop_id):
-        data = request.get_json()
-
-        coffee_shop = CoffeeShop.query.get(coffee_shop_id)
-
-        if not coffee_shop:
-            return make_response({"error": "Coffee shop not found"}, 404)
-
-        coffee_shop.name = data.get("name", coffee_shop.name)
-        coffee_shop.location = data.get("location", coffee_shop.location)
-        coffee_shop.logo = data.get("logo", coffee_shop.logo)
-
-        # Update CoffeeMenu objects
-        menus = data.get("menus")
-        if menus is not None:
-            coffee_shop.menus = [CoffeeMenu(menu=menu_name) for menu_name in menus]
-
-        db.session.commit()
-
-        return make_response({'message': 'Coffee shop updated successfully!'}, 200)
     
-    def delete(self, coffee_shop_id):
-        # Delete a coffee shop
-        coffee_shop = CoffeeShop.query.get(coffee_shop_id)
-        if not coffee_shop:
-            return make_response({"error": "Coffee shop not found"}, 404)
-
-        db.session.delete(coffee_shop)
-        db.session.commit()
-
-        return make_response({'message': 'Coffee shop deleted successfully!'}, 200)
-
 class CoffeeShopReviewsResource(Resource):
     def post(self, coffee_shop_id):
         data = request.get_json()
@@ -174,39 +142,17 @@ class CoffeeShopReviewsResource(Resource):
         rating = data.get("rating")
         comment = data.get("comment")
 
-        new_review = CoffeeShopReview(rating=rating, comment=comment)
-        coffee_shop.reviews.append(new_review)
-
+        new_review = CoffeeShopReview(rating=rating, comment=comment, coffee_shop_id=coffee_shop_id)
+        
+        db.session.add(new_review)
         db.session.commit()
 
         return make_response({'message': 'Coffee shop review added successfully!'}, 201)
 
-    def put(self, coffee_shop_id, review_id):
-        # Update a review
-        data = request.get_json()
-
-        coffee_shop = CoffeeShop.query.get(coffee_shop_id)
-        if not coffee_shop:
-            return make_response({"error": "Coffee shop not found"}, 404)
-
-        review = CoffeeShopReview.query.get(review_id)
-        if not review:
-            return make_response({"error": "Review not found"}, 404)
-
-        review.rating = data.get("rating", review.rating)
-        review.comment = data.get("comment", review.comment)
-
-        db.session.commit()
-
-        return make_response({'message': 'Coffee shop review updated successfully!'}, 200)
-
     def delete(self, coffee_shop_id, review_id):
-        # Delete a review
-        coffee_shop = CoffeeShop.query.get(coffee_shop_id)
-        if not coffee_shop:
-            return make_response({"error": "Coffee shop not found"}, 404)
+        # Retrieve the review
+        review = CoffeeShopReview.query.filter_by(id=review_id, coffee_shop_id=coffee_shop_id).first()
 
-        review = CoffeeShopReview.query.get(review_id)
         if not review:
             return make_response({"error": "Review not found"}, 404)
 
@@ -214,7 +160,7 @@ class CoffeeShopReviewsResource(Resource):
         db.session.commit()
 
         return make_response({'message': 'Coffee shop review deleted successfully!'}, 200)
-    
+        
 # Add routes to the API
 api.add_resource(Signup, "/signup")
 api.add_resource(Login, "/login")

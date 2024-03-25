@@ -11,7 +11,7 @@ function CoffeeTypes() {
         left: 0,
         width: '100%',
         height: 'calc(100% - 64px)',
-        backgroundImage: 'url("https://static.vecteezy.com/system/resources/previews/025/939/952/large_2x/minimal-interior-design-coffee-cafe-bar-shop-with-beige-cozy-tone-style-and-with-glossy-ivory-white-round-corner-counter-coffee-machinery-with-generative-ai-free-photo.jpeg")', // Corrected background image URL
+        backgroundImage: 'url("https://www.designboom.com/twitterimages/uploads/2018/07/designboom-cafe-sk-fb.jpg")', 
         backgroundSize: 'cover',
         overflow: 'auto',
         padding: '20px',
@@ -20,11 +20,11 @@ function CoffeeTypes() {
       <Grid
         container
         direction="column"
-        justifyContent="center"
-        alignItems="center"
+        justifyContent="flex-start"
+        alignItems="flex-end"
         style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', width: '50%', height: '50%' }}
       >
-        <Grid item>
+        <Grid item style={{ textAlign: 'right', paddingRight: '20px', paddingTop: '20px' }}>
           <Typography variant="h4" gutterBottom style={{ color: '#3E2723', fontWeight: 'bold' }}>
             Different Types of Coffee
           </Typography>

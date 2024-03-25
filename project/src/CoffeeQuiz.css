@@ -2,7 +2,7 @@
     position: fixed;
     width: 10px;
     height: 10px;
-    background-color: #f00; /* Change color as needed */
+    background-color: #f00; 
     animation: confetti-fall linear infinite both;
   }
   
